@@ -1,0 +1,45 @@
+class OwnError(Exception):
+    pass
+import sys 
+while True:
+    try:
+        n=input("enter")
+        x=n.split()
+        
+        if (n=='q'):
+            print("end")
+            break
+        
+        if len(x)!=3:
+            raise OwnError("enter 3 values")
+        if not x[0].isdigit():
+            raise OwnError("enter int value for first operand")
+        if not x[2].isdigit():
+            raise OwnError("enter int value for second operand")
+        if int(x[0])>=50 or int(x[2])>=50:
+            if int(x[0])>=50:
+                   raise OwnError(x[0],"is greater than 50")
+            if int(x[2])>=50:
+                   raise OwnError(x[0],"is greater than 50")
+        
+        op1=x[0]
+        op2=x[2]
+        
+        if x[1]=='+':
+            ans=int(op1)+int(op2)
+        elif x[1]=='-':
+            ans=int(op1)-int(op2)
+        elif x[1]=='*':
+            ans=int(op1)*int(op2)
+        elif x[1]=='/':
+            if op2=='0':
+                raise OwnError("cannot be divided by zero")
+            ans=int(op1)/int(op2)
+        else:
+            raise OwnError("enter proper operand")
+            
+        print(ans)
+    except OwnError as v:
+        
+        print("error:" ,v)
+        
