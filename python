@@ -1,4 +1,594 @@
 
+
+
+
+
+
+
+
+
+
+
+#####
+#find second largest
+l=[1,2,3,54,657,86,89]
+m=l[0]
+s=l[1]
+for i in range(2,len(l)):
+    if(m>l[i] and s>l[i]):
+        break
+    elif(m>l[i]):
+        s=l[i]
+    else:
+        m=l[i]
+print(s)
+OUTPUT:
+89
+
+#find second min
+l=[1,2,3,54,657,86,89]
+m=l[0]
+s=l[1]
+for i in range(2,len(l)):
+    if(m<l[i] and s<l[i]):
+        break
+    elif(m<l[i]):
+        s=l[i]
+    else:
+        m=l[i]
+print(s)
+
+OUTPUT:
+2
+
+
+
+
+
+
+
+
+
+####
+l=[]
+add=0
+for i in range(23):
+    x=input("enter")
+    
+    if x=="q":
+        break
+    else:
+        l.append(x)
+print(l)
+
+for i in range(len(l)):
+    add=int(l[i])+int(add)
+print(add)
+avg=add/len(l)+1
+print(avg)
+OUTPUT:
+enter1
+enter2
+enterq
+['1', '2']
+3
+2.5
+
+
+
+
+#####
+#HOURGLASS PATTERN USING FLAG
+n=8
+flag=0
+while n!=9:
+    if(n==0):
+        flag=1
+    if(flag==0):
+        print(" " *(8-n)+ (" *" * n))
+        n-=1
+    elif n<8 and flag==1:
+        n+=1
+        print(" " *(8-n)+ (" *" * n))
+   OUTPUT:
+ * * * * * * * *
+  * * * * * * *
+   * * * * * *
+    * * * * *
+     * * * *
+      * * *
+       * *
+        *
+        *
+       * *
+      * * *
+     * * * *
+    * * * * *
+   * * * * * *
+  * * * * * * *
+ * * * * * * * *
+
+
+
+
+
+
+
+####
+
+x=0
+y=10
+def values():
+    print(x) #x is taken from global variable
+    #x+=20 this shows error coz the variable isn't created locally
+    y=20
+    print(y)
+print(x)
+print(y)
+
+values()
+
+print(x)
+print(y)
+
+x=30 #value is changed globally
+print(x)
+print(y)
+
+values()
+ 
+
+
+x=0
+y=10
+z=100
+def  values():
+    y=20
+    global z #can be manipulated by using global keyword hence the value of global variable is also changed
+    z=200
+    print(x)
+    print(y)
+    print(z)
+    
+print(x)
+print(y)
+print(z)
+
+values()
+
+print(x)
+print(y)
+print(z)
+
+x=30
+y=40
+z=300
+
+print(x)
+print(y)
+print(z)
+
+values()
+
+print(x)
+print(y)
+print(z)
+
+OUTPUT:
+0
+10
+0
+20
+0
+10
+30
+10
+30
+20
+0
+10
+100
+0
+20
+200
+0
+10
+200
+30
+40
+300
+30
+20
+200
+30
+40
+200
+
+
+#####
+#function
+
+def summin(a,b):
+    return a+b,a-b
+x=summin(30,10)
+y,z=summin(40,20)
+print(x)
+print(y)
+print(z)
+
+OUTPUT:
+(40, 20)
+60
+20
+
+
+
+
+####
+#FILTER MAP
+def even(a):
+    if a%2==0:
+        return True
+    else:
+        return False
+ans=lambda a,b : a+b
+double= lambda x:x*2
+print(ans(2,3))
+print(double(9))
+
+l=[1,2,3,4,5,6]
+fList=list(filter(lambda x:x%2==0,1))
+print(fList)
+
+mList=list(map(lambda x:x*2,1))
+print(mList)
+OUTPUT:
+
+5
+18
+[2, 4, 6]
+[2, 4, 6, 8, 10, 12]
+
+
+
+
+#FIBONACCI 
+
+nterms = int(input("How many terms? "))
+n1, n2 = 0, 1
+count = 0
+if nterms <= 0:
+   print("Please enter a positive integer")
+elif nterms == 1:
+   print("Fibonacci sequence upto",nterms,":")
+   print(n1)
+else:
+   print("Fibonacci sequence:")
+   while count < nterms:
+       print(n1)
+       nth = n1 + n2
+       n1 = n2
+       n2 = nth
+       count += 1
+ OUTPUT:
+ How many terms? 4
+Fibonacci sequence:
+0
+1
+1
+2
+
+
+
+
+
+#####
+#FIBONACCI USING RECUR
+def recur_fibo(n):
+   if n <= 1:
+       return n
+   else:
+       return(recur_fibo(n-1) + recur_fibo(n-2))
+
+nterms = int(input("enter how many terms"))
+
+# check if the number of terms is valid
+if nterms <= 0:
+   print("Plese enter a positive integer")
+else:
+   print("Fibonacci sequence:")
+   for i in range(nterms):
+       print(recur_fibo(i))
+       
+  OUTPUT:
+  
+  enter how many terms4
+Fibonacci sequence:
+0
+1
+1
+2
+
+
+
+####
+#BREAK-CONTINUE
+for i in range(10):
+    print(i)
+    if i==3:
+        continue
+    #whenevr continue/break occurs it directly increments the i value and leaves behind the statement beneath it
+    print("something")
+    if i==5:
+        break
+    print("something")
+    OUTPUT:
+    0
+something
+something
+1
+something
+something
+2
+something
+something
+3
+4
+something
+something
+5
+something
+
+
+
+
+####
+#ADD IN LIST
+l=[1,2,3,45,5,6]
+add=0
+for i in range(len(l)):
+    add=l[i]+add
+print(add)
+OUTPUT:
+62
+
+
+
+
+#####
+l=[]
+add=0
+for i in range(23):
+    x=input("enter")
+    
+    if x=="q":
+        break
+    else:
+        l.append(x)
+print(l)
+
+for i in range(len(l)):
+    add=int(l[i])+int(add)
+print(add)
+avg=add/len(l)+1
+print(avg)
+
+OUTPUT:
+enter2
+enter2
+enter45
+enterq
+['2', '2', '45']
+49
+17.333333333333332
+####
+
+val=input("enter")
+sumv=0
+while val!="q":
+    sumv+=int(val)
+    val=input("enter")
+print("sum: ",sumv)
+
+output:
+enter2
+enter2
+enterq
+sum:  4
+
+#####
+#using break and continue
+
+sumv=0
+while True:
+     val=input("enter")
+     if val=="q":
+          print("ok")
+          break
+     elif val.isdigit() == False :
+          print("enter proper value")
+          continue
+     
+     else:
+        sumv+=int(val)
+print("sum: ",sumv)
+OUTPUT:
+enter2
+enter2
+enterQ
+enter proper value
+enter2
+enter2
+enterq
+ok
+sum:  8
+
+
+
+
+
+
+#####
+class OwnError(Exception):
+    pass
+    import sys
+    sumv=0
+    while True:
+         try:
+            n= input("Enter a number less than 50")
+            if(n=='q'):
+                break
+            if int(n)>50:
+                raise OwnError("enter value less than 50")
+            sumv=+int(n)
+         except OwnError as v:
+             print("error")
+             print(v)
+    print(sumv)
+OUTPUT:
+
+Enter a number less than 5023
+Enter a number less than 5022
+Enter a number less than 50q
+22
+
+
+#######
+import sys
+l=[1,65,65,78,65,8,9,45,34,89,89,65]
+count=0
+k=[]
+try:
+    for elm in l:
+        if l.count(elm)>1:
+            k.append(elm)
+            l.remove(elm)
+
+    for elm in k:
+        if elm in l:
+            l.remove(elm)
+    print(l)
+except:
+        print(sys.exc_info()[0])
+
+OUTPUT:
+[1, 78, 8, 9, 45, 34]
+
+#######
+
+l=[23,22,67,88,144,30,40]
+print(l)
+a=lambda x : x%2 and x%5
+
+flist=list(filter(lambda x : x%2==0 and x%5==0,l))
+print(flist)
+
+l=[2,4,6,7,40]
+print(l)
+a=lambda x:x%2==0
+flist=list(filter(a,l))
+print(flist)
+print(len(flist))
+
+l=[1,2,3,4,5,9]
+w=[]
+a=int(input("enter a value"))
+for elm in l:
+    x=elm*a
+    w.append(x)
+print(l)
+print(w)
+
+l=[1,2,3,4,5,6]
+l1=[7,8,9,10,11,12]
+flist=list(map(lambda x,y :x+y,l,l1))
+print(flist)
+
+OUTPUT:
+[23, 22, 67, 88, 144, 30, 40]
+[30, 40]
+[2, 4, 6, 7, 40]
+[2, 4, 6, 40]
+4
+enter a value1
+[1, 2, 3, 4, 5, 9]
+[1, 2, 3, 4, 5, 9]
+[8, 10, 12, 14, 16, 18]
+
+#######
+#list with common char
+l=[1,2,3,5,6]
+l1=[7,8,9,2,6,5,3]
+flist=list(filter(lambda x:x in l1,l))
+print(flist)
+
+OUTPUT:
+[2, 3, 5, 6]
+
+
+#list with uncommon char
+l=[1,2,3,5,6]
+l1=[7,8,9,2,6,5,3]
+
+flist=list(filter(lambda x:x not in l ,l1))
+print(flist)
+
+klist=list(filter(lambda x:x not in l1,l))
+print(klist)
+print(klist+flist)
+OUTPUT:
+[7, 8, 9]
+[1]
+[1, 7, 8, 9]
+
+
+
+
+           
+
+
+
+
+
+
+
+
+
+
+
+val=int(input("enter"))
+
+sumv=0
+count=0
+while val!=0:
+    rem=val%10
+    print("rem: ",rem)
+    sumv+=rem
+    print("sum: ",sumv)
+    val//=10
+    print("val: ",val)
+    count+=1
+print("digits = ",count)
+print("total sum: ",sumv)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #try and except 
 class OwnError(Exception):
     pass
@@ -44,4 +634,59 @@ while True:
     except OwnError as v:
         
         print("error:" ,v)
+           
+           
+           
+           *#OR*
+           
+           class InputError(Exception):
+    pass
+class OperandError(Exception):
+    pass
+
+def checkInput(num):
+    if len(num)!=3:
+        raise InputError("please enter 3 values")
+    try:
+        op1=int(num[0])
+    except ValueError:
+        raise InputError("please enter a proper input for operator 1")
+    if op1>50:
+        raise InputError("enter value less than 50 for operator 1")
+    try:
+        op2=int(num[2])
+    except ValueError:
+        raise InputError("please enter a proper input for operator 2")
+    if op2>50:
+        raise InputError("enter value less than 50 for operator 2")
         
+    return op1,num[1],op2
+def evaluate(op1,o,op2):
+    if o=='+':
+        return op1+op2
+    elif o=='-':
+        return op1-op2
+    elif o=='*':
+       return op1*op2
+    elif o=='/':
+        if op2=='0':
+            raise OwnError("cannot be divided by zero")
+        return op1/op2
+    else:
+        raise OwnError("enter from +,-,*,/")
+    
+while True:
+    num=input("enter")
+    if num=='q':
+        break
+    try:
+        op1,o,op2=checkInput(num.split())
+        try:
+            ans = evaluate(op1,o,op2)
+            print(op1,o,op2,"=",ans)
+        except OperandError as ope:
+            print("Error Occured")
+            print(ope)
+    except InputError as inp:
+        print("Error Occured")
+        print(inp)
