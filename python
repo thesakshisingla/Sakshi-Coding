@@ -1,15 +1,5 @@
+(1)
 
-
-
-
-
-
-
-
-
-
-
-#####
 #find second largest
 l=[1,2,3,54,657,86,89]
 m=l[0]
@@ -24,6 +14,8 @@ for i in range(2,len(l)):
 print(s)
 OUTPUT:
 89
+
+(2)
 
 #find second min
 l=[1,2,3,54,657,86,89]
@@ -41,15 +33,8 @@ print(s)
 OUTPUT:
 2
 
+(3)
 
-
-
-
-
-
-
-
-####
 l=[]
 add=0
 for i in range(23):
@@ -74,10 +59,8 @@ enterq
 3
 2.5
 
+(4)
 
-
-
-#####
 #HOURGLASS PATTERN USING FLAG
 n=8
 flag=0
@@ -108,13 +91,7 @@ while n!=9:
   * * * * * * *
  * * * * * * * *
 
-
-
-
-
-
-
-####
+(5)
 
 x=0
 y=10
@@ -204,8 +181,8 @@ OUTPUT:
 40
 200
 
+(6)
 
-#####
 #function
 
 def summin(a,b):
@@ -221,10 +198,8 @@ OUTPUT:
 60
 20
 
+(7)
 
-
-
-####
 #FILTER MAP
 def even(a):
     if a%2==0:
@@ -249,8 +224,7 @@ OUTPUT:
 [2, 4, 6]
 [2, 4, 6, 8, 10, 12]
 
-
-
+(8)
 
 #FIBONACCI 
 
@@ -278,11 +252,8 @@ Fibonacci sequence:
 1
 2
 
+(9)
 
-
-
-
-#####
 #FIBONACCI USING RECUR
 def recur_fibo(n):
    if n <= 1:
@@ -309,9 +280,8 @@ Fibonacci sequence:
 1
 2
 
+(10)
 
-
-####
 #BREAK-CONTINUE
 for i in range(10):
     print(i)
@@ -339,10 +309,8 @@ something
 5
 something
 
+(11)
 
-
-
-####
 #ADD IN LIST
 l=[1,2,3,45,5,6]
 add=0
@@ -352,10 +320,8 @@ print(add)
 OUTPUT:
 62
 
+(12)
 
-
-
-#####
 l=[]
 add=0
 for i in range(23):
@@ -381,7 +347,8 @@ enterq
 ['2', '2', '45']
 49
 17.333333333333332
-####
+
+(13)
 
 val=input("enter")
 sumv=0
@@ -396,7 +363,8 @@ enter2
 enterq
 sum:  4
 
-#####
+(14)
+
 #using break and continue
 
 sumv=0
@@ -423,12 +391,8 @@ enterq
 ok
 sum:  8
 
+(15)
 
-
-
-
-
-#####
 class OwnError(Exception):
     pass
     import sys
@@ -452,8 +416,8 @@ Enter a number less than 5022
 Enter a number less than 50q
 22
 
+(16)
 
-#######
 import sys
 l=[1,65,65,78,65,8,9,45,34,89,89,65]
 count=0
@@ -474,7 +438,7 @@ except:
 OUTPUT:
 [1, 78, 8, 9, 45, 34]
 
-#######
+(17)
 
 l=[23,22,67,88,144,30,40]
 print(l)
@@ -515,7 +479,8 @@ enter a value1
 [1, 2, 3, 4, 5, 9]
 [8, 10, 12, 14, 16, 18]
 
-#######
+(18)
+
 #list with common char
 l=[1,2,3,5,6]
 l1=[7,8,9,2,6,5,3]
@@ -525,6 +490,7 @@ print(flist)
 OUTPUT:
 [2, 3, 5, 6]
 
+(19)
 
 #list with uncommon char
 l=[1,2,3,5,6]
@@ -541,20 +507,7 @@ OUTPUT:
 [1]
 [1, 7, 8, 9]
 
-
-
-
-           
-
-
-
-
-
-
-
-
-
-
+(20)
 
 val=int(input("enter"))
 
@@ -571,23 +524,7 @@ while val!=0:
 print("digits = ",count)
 print("total sum: ",sumv)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+(21)
 
 #try and except 
 class OwnError(Exception):
